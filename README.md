@@ -32,3 +32,26 @@ $$ P(C|X) = \frac{P(X|C)P(C)}{P(X)} $$
 ```python
 # 初始化时指定特征方法
 classifier = EmailClassifier(feature_method='tfidf')  # 或 'freq'
+2. 样本平衡控制
+python
+# 启用 SMOTE 过采样
+classifier = EmailClassifier(balance=True)
+3. 执行预测
+python
+classifier.predict('邮件_files/151.txt')
+模型评估
+训练完成后自动输出分类评估报告：
+
+              precision    recall  f1-score
+普通邮件        0.8958      1.0000    0.9451
+垃圾邮件        1.0000      0.8898    0.9417
+项目结构
+邮件分类系统/
+├── 邮件_files/       # 邮件数据集
+│   ├── 0.txt
+│   └── ...
+├── classify.py      # 主程序
+└── README.md        # 项目文档
+依赖库
+bash
+pip install jieba scikit-learn imbalanced-learn
