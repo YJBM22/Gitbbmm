@@ -6,6 +6,7 @@
 - 提供精确率(Precision)/召回率(Recall)/F1值 多维度评估报告
 
 ## 算法基础
+https://latex.codecogs.com/svg.latex?P(C%7CX)%20%3D%20%5Cfrac%7BP(X%7CC)P(C)%7D%7BP(X)%7D
 ### 多项式朴素贝叶斯
 基于贝叶斯定理与特征条件独立性假设：
 $$ P(C|X) = \frac{P(X|C)P(C)}{P(X)} $$
