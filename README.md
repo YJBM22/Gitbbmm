@@ -1,8 +1,5 @@
-1.1 特征选择参数化切换
-# 初始化验证
+# 1 特征选择参数化切换
 classifier = EmailClassifier(feature_method='tfidf')  # 可切换为'freq'
-
-# 特征工程验证
 def _build_features(self):
     if self.feature_method == 'freq':
         # 高频词特征矩阵 100维
@@ -12,25 +9,19 @@ def _build_features(self):
 ✅ 统一特征维度（max_features=100）
 ✅ 支持运行时动态切换
 
-1.2 样本平衡处理
-python
-# SMOTE应用验证
+# 2 样本平衡处理
 if self.balance:
     X, y = SMOTE().fit_resample(X, y)  # 数据分布变为127:127
 ✅ 解决类别不平衡问题
 ✅ 通过balance参数控制
 
-1.3 模型评估指标
-python
-# 分类报告验证
+# 3 模型评估指标
 print(classification_report(y, preds, 
     target_names=['普通邮件','垃圾邮件'], digits=4))
 ✅ 输出精度/召回率/F1值
 ✅ 包含详细类别指标
 
-
 # 邮件分类系统
-
 ##  核心功能
 基于朴素贝叶斯的二分类系统，支持以下特性：
 - 双特征模式：高频词统计 / TF-IDF加权
