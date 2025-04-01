@@ -76,20 +76,3 @@ classifier.predict('test_mail.txt')
     普通邮件     0.9730    0.9600    0.9665       127
     垃圾邮件     0.9608    0.9730    0.9669       127
 ```
-
-##  项目部署
-1. 克隆仓库
-```bash
-git clone https://github.com/yourname/email-classifier.git
-```
-2. 安装依赖
-```bash
-pip install -r requirements.txt  # 包含jieba, sklearn, imblearn等
-```
-3. 数据准备
-```
-项目结构：
-/homework3/
-├── 邮件_files/      # 存放所有txt文件
-├── email_classifier.py
-└── README.md
